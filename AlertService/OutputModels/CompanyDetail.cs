@@ -15,30 +15,13 @@ namespace AlertService.OutputModels
 
         public override string ToString()
         {
-            //replace with string builder
-            if (Currency == "GBP")
-            {
-                return $"{Name} - {Ticker}\n" +
+            return $"{Name} - {Ticker}\n"+
                 $"{Industry} - {Exchange}\n" +
-                $"{CurrentPrice} {Currency}\n " +
+                $"Current Price: {CurrentPrice} {Currency}\n " +
                 $"\n" +
-                $"TargetPrice: {TargetPrice} {Currency}\n" +
+                $"Target Price: {TargetPrice} {Currency}\n" +
                 $"\n" +
                 $"{GetReccomendation()}";
-            }
-            else
-            {
-                return $"{Name} - {Ticker}\n" +
-                $"{Industry} - {Exchange}\n" +
-                $"{CurrentPrice} {Currency}\n" +
-                $"{GetGBPPrice()} GBP\n" +
-                $"\n" +
-                $"TargetPrice: {TargetPrice} {Currency}\n" +
-                $"\n" +
-                $"Recommendations\n" +
-                $"{GetReccomendation()}";
-            }
-
         }
 
         private string GetReccomendation()
@@ -57,13 +40,6 @@ namespace AlertService.OutputModels
                 $"Hold: {Math.Round(hold, 1)}%\n" +
                 $"Sell: {Math.Round(sell, 1)}%\n" +
                 $"Strong Sell: {Math.Round(strongSell, 1)}%";
-        }
-
-        private string GetGBPPrice()
-        {
-            //get conversion rate from cache
-            //update cache every 30 mins
-            return "TBC";
         }
     }
 }

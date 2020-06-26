@@ -19,10 +19,10 @@ namespace StockConsole
             try
             {
                 //webhooks
-                bot.OnMessage += ReadTelegramMessage;
-                bot.StartReceiving();
-                Console.ReadLine();
-                bot.StopReceiving();
+                //bot.OnMessage += ReadTelegramMessage;
+                //bot.StartReceiving();
+                //Console.ReadLine();
+                //bot.StopReceiving();
             }
             catch (Exception ex)
             {
