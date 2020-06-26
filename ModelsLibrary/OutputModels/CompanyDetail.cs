@@ -15,10 +15,10 @@ namespace ModelsLibrary.OutputModels
 
         public override string ToString()
         {
-            return $"{Name} - {Ticker}\n" +
-                $"{Industry} - {Exchange}\n" +
-                $"Current Price: {CurrentPrice} {Currency}\n" +
-                $"Target Price: {TargetPrice} {Currency}\n" +
+            return $"{Name} - {Ticker}\n\n" +
+                $"{Industry} - {Exchange}\n\n" +
+                $"Current Price: {CurrentPrice} {Currency}\n\n" +
+                $"Target Price: {TargetPrice} {Currency}\n\n" +
                 $"{GetRecomendation()}";
         }
 
