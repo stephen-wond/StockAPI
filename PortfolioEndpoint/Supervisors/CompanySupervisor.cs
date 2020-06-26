@@ -26,8 +26,8 @@ namespace PortfolioEndpoint.Supervisors
         {
             var ticker = await GetCompanyTicker(companyName);
 
-            var domain = _config["finnhubEndpoint"];
-            var apiToken = _config["apiToken"];
+            var domain = _config["StockAPI:Finnhub:apiEndpoint"];
+            var apiToken = _config["StockAPI:Finnhub:apiToken"];
 
             var profilePayload = SharedHelper.GetResponsePayload($"{domain}stock/profile2?symbol={ticker}&token={apiToken}");
             var quotePayload = SharedHelper.GetResponsePayload($"{domain}quote?symbol={ticker}&token={apiToken}");

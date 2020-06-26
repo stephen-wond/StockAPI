@@ -25,7 +25,7 @@ namespace PortfolioEndpoint
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddDbContext<PortfolioEndpointContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("PortfolioEndpointContext")));
+                    options.UseSqlServer(Configuration.GetValue<string>("StockAPI:ConnectionStrings:PortfolioEndpointContext")));//.GetConnectionString("PortfolioEndpointContext")));
 
             services.AddScoped<ICompanySupervisor, CompanySupervisor>();
 

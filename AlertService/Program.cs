@@ -16,11 +16,11 @@ namespace AlertService
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    //services.AddHostedService<RefreshSymbolsWorker>();
-                    //services.AddTransient<ISymbolSupervisor, SymbolSupervisor>();
+                    services.AddHostedService<RefreshSymbolsWorker>();
+                    services.AddTransient<ISymbolSupervisor, SymbolSupervisor>();
 
-                    services.AddHostedService<CheckPriceChangesWorker>();
-                    services.AddTransient<IPriceChangeSupervisor, PriceChangeSupervisor>();
+                    //services.AddHostedService<CheckPriceChangesWorker>();
+                    //services.AddTransient<IPriceChangeSupervisor, PriceChangeSupervisor>();
                 });
     }
 }
