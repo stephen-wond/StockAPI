@@ -4,6 +4,7 @@ using ModelsLibrary.OutputModels;
 using Newtonsoft.Json;
 using PortfolioEndpoint.Data;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -66,8 +67,9 @@ namespace PortfolioEndpoint.Supervisors
             dynamic t = JsonConvert.DeserializeObject(targetPricePayload);
             _companyDetail.TargetPrice = t.targetMean;
 
-            dynamic r = JsonConvert.DeserializeObject(reccomendationPayload);
-            _companyDetail.Recommend = r[0];
+            var r = JsonConvert.DeserializeObject<IEnumerable<dynamic>>(reccomendationPayload);
+
+            _companyDetail.Recommend = r.FirstOrDefault();
 
             return _companyDetail.ToString();
         }
