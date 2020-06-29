@@ -15,10 +15,10 @@ namespace ModelsLibrary.OutputModels
 
         public override string ToString()
         {
-            return $"{Name} - {Ticker}\n\n" +
-                $"{Industry} - {Exchange}\n\n" +
-                $"Current Price: {CurrentPrice} {Currency}\n\n" +
-                $"Target Price: {TargetPrice} {Currency}\n\n" +
+            return $"{Name} - {Ticker}  \n\n" +
+                $"{Industry} - {Exchange}  \n\n" +
+                $"Current Price: {CurrentPrice} {Currency}  \n\n" +
+                $"Target Price: {TargetPrice} {Currency}  \n\n" +
                 $"{GetRecomendation()}";
         }
 
@@ -35,10 +35,10 @@ namespace ModelsLibrary.OutputModels
                 double sell = (Recommend.sell / total) * 100;
                 double strongSell = (Recommend.strongSell / total) * 100;
 
-                return $"Strong Buy: {Math.Round(strongBuy, 1)}%\n" +
-                    $"Buy: {Math.Round(buy, 1)}%\n" +
-                    $"Hold: {Math.Round(hold, 1)}%\n" +
-                    $"Sell: {Math.Round(sell, 1)}%\n" +
+                return $"Strong Buy: {Math.Round(strongBuy, 1)}%|" +
+                    $"Buy: {Math.Round(buy, 1)}%|" +
+                    $"Hold: {Math.Round(hold, 1)}%|" +
+                    $"Sell: {Math.Round(sell, 1)}%|" +
                     $"Strong Sell: {Math.Round(strongSell, 1)}%";
             }
             else
